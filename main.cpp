@@ -55,7 +55,7 @@ static int gettok() {
             LastChar = getchar();
         } while (isdigit(LastChar) || LastChar == '.'); // why does LLVM guide use do while here and not in the above implementation; TODO: Fix later
 
-        NumVal = strtod(NumStr.c_str(), 0); // not sure why clangtidy has a problem with this? not really even sure what it does
+        NumVal = strtod(NumStr.c_str(), nullptr); // not sure why clangtidy has a problem with this? not really even sure what it does
         return tok_number;
     }
 
