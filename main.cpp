@@ -86,6 +86,7 @@ static int gettok() {
 // -----------------------------------=======
 //            AST
 // -----------------------------------=======
+namespace { 
 
 class ExprAST {
 public:
@@ -144,6 +145,8 @@ class FunctionAST {
 public:
     FunctionAST(std::unique_ptr<PrototypeAST> Proto, std::unique_ptr<ExprAST> Body) : Proto(std::move(Proto)), Body(std::move(Body)) {};
 };
+
+} // end anonymous namespace
 
 // -----------------------------------=======
 //            End AST
